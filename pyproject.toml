@@ -1,0 +1,45 @@
+[project]
+name = "xtu-edu"
+version = "0.0.1"
+description = "湘潭大学教务系统API"
+authors = [{ name = "YangRucheng", email = "admin@yangrucheng.top" }]
+dependencies = [
+    "httpx>0.28.0",
+    "xtu-edu-captcha-solver>=0.0.2",
+    "Beautifulsoup4>=4.13.3",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+[project.urls]
+homepage = "https://github.com/xtu-org/xtu-edu"
+repository = "https://github.com/xtu-org/xtu-edu"
+
+[tool.pdm.dev-dependencies]
+i18n = ["babel ~=2.11"]
+dev = ["ruff~=0.6.0", "pre-commit~=3.1"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "UP", "C", "T", "PYI", "PT", "Q"]
+ignore = [
+    "C901",
+    "T201",
+    "E402",
+    "UP037",
+    "UP006",
+    "UP007",
+    "PYI020",
+    "PYI021",
+    "W293",
+    "UP035",
+    "E501",
+]
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
